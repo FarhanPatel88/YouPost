@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const environment = {\n  baseUrl: 'https://youpost.onrender.com',\n  production: true\n};","map":null,"metadata":{},"sourceType":"module"}
