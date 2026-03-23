@@ -81,8 +81,7 @@ const alertUser = function (fromUser, toId, type, postContent) {
 
         User.findById(toId, (err, user) => {
             if (err) {
-                reject('Error:', err);
-                return res.json({ err: err });
+                return reject(err);
             }
 
             user.new_notifications++;
@@ -90,8 +89,7 @@ const alertUser = function (fromUser, toId, type, postContent) {
             user.notifications.unshift(JSON.stringify(alert));
             user.save((err) => {
                 if (err) {
-                    reject('Error:', err);
-                    return res.json({ err: err });
+                    return reject(err);
                 }
                 resolve();
             });
